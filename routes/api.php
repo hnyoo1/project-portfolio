@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SkillController;
+use App\Http\Controllers\MessageController;
 
 
 Route::get('/user', function (Request $request) {
@@ -12,3 +13,7 @@ Route::get('/user', function (Request $request) {
     
 Route::apiResource('projects', ProjectController::class);
 Route::apiResource('skills', SkillController::class);
+
+Route::post('/contact', [MessageController::class, 'store']);
+
+Route::get('/messages', [MessageController::class, 'index']);
