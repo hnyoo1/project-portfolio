@@ -39,7 +39,8 @@ class MessageController extends Controller
         $message = Message::create($request->all());
 
         return response()->json([
-            'message' => 'Your message has been sent successfully!'
+            'message' => 'Your message has been sent successfully!',
+            'data'    => $message,
         ], 201);
     }
 
